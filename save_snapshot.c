@@ -68,14 +68,13 @@ void jpeg_save(snapshot_t *snap)
     fclose(fp);
 }
 
-void save_snapshot(handler* my_handler,char* rgb_matrix){
+void save_snapshot(snapshot_t* snap,char* rgb_matrix){
 
-    my_handler->snap.height=SNAPSHOT_HEIGHT;
-    my_handler->snap.width=SNAPSHOT_WIDTH;
-    my_handler->snap.data=rgb_matrix;
-    if(!strcmp(my_handler->snap.type,"bmp"))
-        bmp_save(my_handler->snap);
+    snap->data=rgb_matrix;
+   if(!strcmp(snap->type,"bmp"))
+        bmp_save(snap);
     else{
-        jpeg_save(&(my_handler->snap));
+        jpeg_save(snap);
     }
+
 }

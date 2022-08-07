@@ -7,6 +7,6 @@
 #include "functions_tools.h"
 
 
-void* capture(void* arg);
+void* capture(void* data, void *params);
 
 #endif // CAPTURE_H

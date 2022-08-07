@@ -7,5 +7,10 @@
 #define SNAPSHOT_WIDTH 360
 #define MAX_TEMP 30
 #include "functions_tools.h"
-void* rgb_converter(void* arg);
+#include "save_snapshot.h"
+
+
+void* rgb_converter(void* data, void* params);
+
+
 #endif // RGB_CONVERTER_H

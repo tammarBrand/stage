@@ -7,12 +7,16 @@
 //implement queue syncronic functions
 Node * createNode(void * data){
     Node* node=(Node*)malloc(sizeof(Node));
+    if(node==NULL)
+        exit(0);
     node->data=data;
     return node;
 }
 
 Queue* createQueue(int capacity){
     Queue *q=(Queue*)malloc(sizeof(Queue));
+    if(q==NULL)
+        exit(0);
     initQueue(q,capacity);
     return q;
 }
@@ -21,9 +25,9 @@ void initQueue(Queue* q,int capacity){
     q->size=0;
     q->head=NULL;
     q->tail=NULL;
-    sem_init(&(q->mutex),0,1);//to do sync
-    sem_init(&(q->is_full_mutex),0,MAX_MESSAGES);//to check if there is place
-    for(int i=0;i<MAX_MESSAGES;i++){
+    sem_init(&(q->mutex),0,1);//makes it
+    sem_init(&(q->is_full_mutex),0,q->capacity);//checks if there is place
+    for(int i=0;i<q->capacity;i++){
         sem_wait(&(q->is_full_mutex));
     }
     return;

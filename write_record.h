@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "functions_tools.h"
-void* write_record(void*arg);
+
+void* write_record(void* data, void* params);
 
 #endif // WRITE_RECORD_H

@@ -1,10 +1,12 @@
 #include "encode.h"
 
 
-void* encode(void* arg){
+void* encode(void* data, void* params){
 
-    YUV* yuv=(YUV*)arg;
     printf("encode\n");
+    YUV* yuv=(YUV*)data;
+
+
     return yuv;
 
 }

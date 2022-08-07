@@ -3,6 +3,6 @@
 #define ENCODE_H
 #include "functions_tools.h"
 
-void* encode(void* arg);
+void* encode(void* data, void* params);
 
 #endif // ENCODE_H
